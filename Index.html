@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Questions for Madam Bebi ❤️</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffd0e1, transparent 35%),
+        radial-gradient(circle at 90% 90%, #ffc0d8, transparent 35%),
+        linear-gradient(135deg, #fff0f6, #ffd9e8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.floating {
+    position: fixed;
+    bottom: -60px;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ================= MAIN CARD ================= */
+
+.card {
+    width: 94%;
+    max-width: 570px;
+    padding: 30px 22px;
+
+    background: rgba(255,255,255,.91);
+    backdrop-filter: blur(20px);
+
+    border-radius: 38px;
+
+    box-shadow:
+        0 25px 70px rgba(255,65,130,.25);
+
+    text-align: center;
+
+    position: relative;
+    z-index: 5;
+
+    animation: appear .8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= TEXT ================= */
+
+h1 {
+    color: #ff3978;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #ff4783;
+}
+
+.subtitle {
+    color: #777;
+    line-height: 1.7;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.primary {
+    width: 100%;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,#ff3e7c,#ff85ad);
+
+    box-shadow:
+        0 8px 20px rgba(255,60,120,.25);
+}
+
+.secondary {
+    background: #fff0f5;
+    color: #ff4d87;
+}
+
+/* ================= MADE BY ================= */
+
+.made-by {
+    margin-top: 25px;
+    padding-top: 15px;
+
+    border-top: 1px solid #ffd7e4;
+
+    color: #ad8997;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.made-by b {
+    color: #ff4b87;
+}
+
+/* ================= ENVELOPE ================= */
+
+.envelope-area {
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope {
+    width: 280px;
+    height: 180px;
+
+    background: #ff8fb3;
+    border-radius: 8px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 35px rgba(255,70,130,.3);
+
+    cursor: pointer;
+
+    transition: .7s;
+}
+
+.envelope:before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #ffb2ca;
+
+    transform-origin: top;
+
+    transition: .7s;
+
+    z-index: 3;
+}
+
+.envelope:after {
+    content: "💌";
+
+    position: absolute;
+
+    font-size: 50px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    z-index: 4;
+}
+
+.envelope.open {
+    transform: translateY(30px);
+}
+
+.envelope.open:before {
+    transform: rotateX(180deg);
+}
+
+.open-text {
+    margin-top: 25px;
+    color: #ff4c86;
+    font-weight: bold;
+}
+
+/* ================= LOVE LETTER ================= */
+
+.letter {
+    background: #fff8fb;
+
+    border: 2px solid #ffd5e3;
+    border-radius: 25px;
+
+    padding: 22px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    margin: 20px 0;
+}
+
+.signature {
+    text-align: right;
+
+    color: #ff4d87;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    background: #ffe2ec;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin: 15px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+
+    background:
+        linear-gradient(90deg,#ff3d7d,#ff9bbb);
+
+    transition: .4s;
+}
+
+/* ================= QUESTIONS ================= */
+
+.question-number {
+    color: #ff4b85;
+    font-weight: bold;
+}
+
+.question {
+    font-size: 21px;
+    font-weight: bold;
+
+    color: #444;
+
+    margin: 25px 0;
+
+    min-height: 65px;
+}
+
+.answer-input {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    border: 2px solid #ffd2e1;
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+.answer-input:focus {
+    border-color: #ff5790;
+}
+
+/* ================= LOVE QUESTION ================= */
+
+.love-emoji {
+    font-size: 90px;
+
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.love-question {
+    font-size: 27px;
+
+    color: #ff3978;
+
+    font-weight: bold;
+
+    margin: 25px 0;
+}
+
+.love-buttons {
+    min-height: 140px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.yes-button {
+    background: #ff4381;
+    color: white;
+    min-width: 130px;
+}
+
+.no-button {
+    background: #eee;
+    color: #555;
+
+    min-width: 130px;
+
+    position: relative;
+
+    transition: transform .2s;
+}
+
+/* ================= MEMORIES ================= */
+
+.memory-img {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 12px 30px rgba(255,60,120,.25);
+
+    margin: 15px 0;
+}
+
+.memory-title {
+    color: #ff4b85;
+    font-weight: bold;
+}
+
+/* ================= FINAL ================= */
+
+.final-heart {
+    font-size: 95px;
+
+    animation: heartbeat 1s infinite;
+}
+
+.final-title {
+    font-size: 32px;
+    color: #ff3275;
+}
+
+.final-message {
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* ================= ANSWER CARD ================= */
+
+#answerCard {
+    background:
+        linear-gradient(145deg,#fff7fa,#ffe7f0);
+
+    border: 3px solid #ff9fbd;
+
+    border-radius: 28px;
+
+    padding: 25px 18px;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 30px rgba(255,70,130,.18);
+
+    margin-top: 20px;
+}
+
+.answer-card-header {
+    text-align: center;
+
+    padding-bottom: 15px;
+
+    border-bottom: 2px dashed #ffb5cb;
+
+    margin-bottom: 18px;
+}
+
+.answer-card-header .emoji {
+    font-size: 40px;
+}
+
+.answer-card-header h2 {
+    margin: 5px 0;
+
+    font-size: 24px;
+}
+
+.answer-card-header p {
+    margin: 7px 0 0;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+.answer-item {
+    background: rgba(255,255,255,.8);
+
+    border-radius: 15px;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    border-left: 4px solid #ff79a3;
+}
+
+.answer-question {
+    color: #ff4784;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.answer-text {
+    color: #555;
+
+    margin-top: 7px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+.answer-card-footer {
+    text-align: center;
+
+    color: #ff5c8d;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top: 2px dashed #ffb5cb;
+}
+
+.screenshot-button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    background:
+        linear-gradient(135deg,#ff4b87,#ff9fbd);
+
+    color: white;
+
+    font-size: 17px;
+}
+
+/* ================= MUSIC ================= */
+
+.music-button {
+    position: fixed;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 20;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(255,60,120,.2);
+
+    font-size: 20px;
+}
+
+/* ================= FIREWORKS ================= */
+
+.firework {
+    position: fixed;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    font-size: 30px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px) {
+
+    .card {
+        padding: 25px 16px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .envelope {
+        width: 240px;
+        height: 155px;
+    }
+
+    .envelope:before {
+        border-left-width: 120px;
+        border-right-width: 120px;
+    }
+
+    .memory-img {
+        width: 180px;
+        height: 180px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC BUTTON -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()">
+    🔇
+</button>
+
+
+<div class="card">
+
+
+<!-- =====================================================
+     1. ENVELOPE
+===================================================== -->
+
+<section id="envelopePage">
+
+    <div class="envelope-area">
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()">
+        </div>
+
+        <div class="open-text">
+            Tap the envelope, Madam Bebi... 💌
+        </div>
+
+        <div class="made-by">
+            Made by <b>Vanxell</b> ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. LOVE LETTER
+===================================================== -->
+
+<section id="letterPage" class="hidden">
+
+    <div style="font-size:70px;">
+        💌
+    </div>
+
+    <h1>
+        For Madam Bebi ❤️
+    </h1>
+
+    <div class="letter">
+
+        <b>Dear Madam Bebi,</b>
+
+        <br><br>
+
+        I made this little website especially for you. 🥺❤️
+
+        <br><br>
+
+        Inside are some questions I really want you
+        to answer honestly.
+
+        <br><br>
+
+        Some might make you smile...
+
+        <br>
+
+        Some might make you shy...
+
+        <br>
+
+        And some might make you laugh. 😂
+
+        <br><br>
+
+        But most importantly...
+
+        <br><br>
+
+        <b>
+        I just want to know what's inside your heart. ❤️
+        </b>
+
+        <div class="signature">
+            From Vanxell ❤️
+        </div>
+
+    </div>
+
+    <button
+        class="primary"
+        onclick="goToQuestions()">
+        I'm Ready 💗
+    </button>
+
+    <div class="made-by">
+        Made by <b>Vanxell</b> ❤️
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. QUESTIONS
+===================================================== -->
+
+<section id="questionsPage" class="hidden">
+
+    <h1>
+        My Questions for Madam Bebi 💗
+    </h1>
+
+    <p class="subtitle">
+        Be honest... I will remember your answers. 😏❤️
+    </p>
+
+    <div class="progress">
+
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+
+    </div>
+
+    <div
+        class="question-number"
+        id="questionNumber">
+    </div>
+
+    <div
+        class="question"
+        id="question">
+    </div>
+
+    <input
+        type="text"
+        class="answer-input"
+        id="answer"
+        placeholder="Your answer... 💕">
+
+    <button
+        class="primary"
+        onclick="nextQuestion()">
+        Next Question ❤️
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     4. LOVE QUESTION
+===================================================== -->
+
+<section id="lovePage" class="hidden">
+
+    <div class="love-emoji">
+        🥺
+    </div>
+
+    <h1>
+        One last question...
+    </h1>
+
+    <div class="love-question">
+
+        Madam Bebi...
+
+        <br><br>
+
+        Do you love me? ❤️
+
+    </div>
+
+    <div class="love-buttons">
+
+        <button
+            class="yes-button"
+            onclick="loveYes()">
+            YES ❤️
+        </button>
+
+        <button
+            class="no-button"
+            id="noButton"
+            onclick="runAway()"
+            onmouseover="runAway()">
+            NO 😭
+        </button>
+
+    </div>
+
+    <div class="made-by">
+        Made by <b>Vanxell</b> ❤️
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. MEMORIES
+===================================================== -->
+
+<section id="memoryPage" class="hidden">
+
+    <div style="font-size:65px;">
+        📸
+    </div>
+
+    <h1>
+        Our Little Memories ❤️
+    </h1>
+
+    <p class="subtitle">
+        Add your favorite pictures together. 🥰
+    </p>
+
+    <input
+        type="file"
+        accept="image/*"
+        multiple
+        onchange="loadMemories(event)">
+
+    <br>
+
+    <img
+        id="memoryImage"
+        class="memory-img"
+        src=""
+        alt="Memory">
+
+    <div
+        id="memoryTitle"
+        class="memory-title">
+        Choose your pictures above ❤️
+    </div>
+
+    <br>
+
+    <button
+        class="secondary"
+        onclick="previousMemory()">
+        ◀
+    </button>
+
+    <button
+        class="secondary"
+        onclick="nextMemory()">
+        ▶
+    </button>
+
+    <br><br>
+
+    <button
+        class="primary"
+        onclick="showFinal()">
+        Continue ❤️
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     6. FINAL
+===================================================== -->
+
+<section id="finalPage" class="hidden">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1 class="final-title">
+        I LOVE YOU, MADAM BEBI
+    </h1>
+
+    <p class="final-message">
+
+        You made it all the way here. 🥹💕
+
+        <br><br>
+
+        Thank you for answering my questions
+        and sharing what's inside your heart.
+
+        <br><br>
+
+        I hope we make many more memories together.
+
+        <br><br>
+
+        More laughs. 😂<br>
+        More dates. 🌹<br>
+        More adventures. ✈️<br>
+        More silly moments. 🤭<br>
+        More love. ❤️
+
+        <br><br>
+
+        <b>
+        If I had to choose you again,
+        I would still choose you. 🥺❤️
+        </b>
+
+    </p>
+
+    <button
+        class="primary"
+        onclick="showAnswerCard()">
+        💌 See All Your Answers
+    </button>
+
+
+    <!-- SCREENSHOT SECTION -->
+
+    <div
+        id="answerSection"
+        class="hidden">
+
+        <div id="answerCard">
+
+            <div class="answer-card-header">
+
+                <div class="emoji">
+                    💌
+                </div>
+
+                <h2>
+                    Madam Bebi's Answers ❤️
+                </h2>
+
+                <p>
+                    My Questions for Madam Bebi
+                </p>
+
+            </div>
+
+            <div id="answerList"></div>
+
+            <div class="answer-card-footer">
+
+                Made with ❤️ especially for Madam Bebi
+
+                <br><br>
+
+                Made by <b>Vanxell</b> ❤️
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="screenshot-button"
+            id="saveButton"
+            onclick="saveAnswersAsImage()">
+
+            📸 Save Answers as Image
+
+        </button>
+
+        <p style="
+            font-size:12px;
+            color:#999;
+            margin-top:8px;">
+
+            Keep this little memory forever. ❤️
+
+        </p>
+
+    </div>
+
+
+    <div class="made-by">
+        Made by <b>Vanxell</b> ❤️
+    </div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+const questions = [
+
+    "What was the first thing you noticed about me? 👀💕",
+
+    "What was your first impression of me? 🥰",
+
+    "What's your favorite memory with me? ❤️",
+
+    "What's one thing you love about me? 💗",
+
+    "What made you fall for me? 🥹",
+
+    "What's your favorite thing about our relationship? 💕",
+
+    "What's your favorite nickname for me? 😘",
+
+    "What's something I do that always makes you smile? 😊",
+
+    "If we could travel anywhere together, where would you take me? ✈️🌎",
+
+    "What's one thing you want us to experience together someday? ✨",
+
+    "What's your dream date with me? 🌹",
+
+    "If we had one whole day together, what would we do? 🥰",
+
+    "What's one promise you want me to keep? 🥺",
+
+    "What's one thing you hope never changes about us? ❤️",
+
+    "If you could relive one moment with me, which moment would it be? 💞",
+
+    "What's one thing you want us to do more often? 💗",
+
+    "Who's more stubborn between us? 😂",
+
+    "Who loves who more? 😏❤️",
+
+    "What is one word that describes us? 💕",
+
+    "What do you want our future memories to look like? 🥹❤️"
+
+];
+
+let currentQuestion = 0;
+let answers = [];
+
+let memories = [];
+let currentMemory = 0;
+
+
+/* =====================================================
+   PAGE SWITCHER
+===================================================== */
+
+function showPage(id) {
+
+    const pages = [
+        "envelopePage",
+        "letterPage",
+        "questionsPage",
+        "lovePage",
+        "memoryPage",
+        "finalPage"
+    ];
+
+    pages.forEach(page => {
+
+        document
+            .getElementById(page)
+            .classList.add("hidden");
+
+    });
+
+    document
+        .getElementById(id)
+        .classList.remove("hidden");
+
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+function openEnvelope() {
+
+    document
+        .getElementById("envelope")
+        .classList.add("open");
+
+    setTimeout(() => {
+
+        showPage("letterPage");
+
+    },900);
+
+}
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+function goToQuestions() {
+
+    showPage("questionsPage");
+
+    loadQuestion();
+
+}
+
+
+function loadQuestion() {
+
+    document.getElementById("question").innerText =
+        questions[currentQuestion];
+
+    document.getElementById("questionNumber").innerText =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion / questions.length) * 100) + "%";
+
+    document.getElementById("answer").value = "";
+
+    document.getElementById("answer").focus();
+
+}
+
+
+function nextQuestion() {
+
+    const input =
+        document.getElementById("answer");
+
+    const value =
+        input.value.trim();
+
+    if (!value) {
+
+        alert("Madam Bebi... answer muna 😭❤️");
+
+        return;
+
+    }
+
+    answers.push(value);
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showPage("lovePage");
+
+    }
+
+}
+
+
+/* =====================================================
+   RUNNING NO BUTTON
+===================================================== */
+
+function runAway() {
+
+    const button =
+        document.getElementById("noButton");
+
+    const x =
+        Math.random() * 300 - 150;
+
+    const y =
+        Math.random() * 180 - 90;
+
+    button.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+}
+
+
+/* =====================================================
+   YES
+===================================================== */
+
+function loveYes() {
+
+    createFireworks();
+
+    setTimeout(() => {
+
+        showPage("memoryPage");
+
+    },1800);
+
+}
+
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+function loadMemories(event) {
+
+    memories = [];
+
+    const files =
+        Array.from(event.target.files);
+
+    files.forEach(file => {
+
+        memories.push(
+            URL.createObjectURL(file)
+        );
+
+    });
+
+    currentMemory = 0;
+
+    showMemory();
+
+}
+
+
+function showMemory() {
+
+    const image =
+        document.getElementById("memoryImage");
+
+    const title =
+        document.getElementById("memoryTitle");
+
+    if (!memories.length) {
+
+        image.src = "";
+
+        title.innerText =
+            "Choose your pictures above ❤️";
+
+        return;
+
+    }
+
+    image.src =
+        memories[currentMemory];
+
+    title.innerText =
+        `Memory ${currentMemory + 1} of ${memories.length} ❤️`;
+
+}
+
+
+function nextMemory() {
+
+    if (!memories.length) return;
+
+    currentMemory++;
+
+    if (currentMemory >= memories.length)
+        currentMemory = 0;
+
+    showMemory();
+
+}
+
+
+function previousMemory() {
+
+    if (!memories.length) return;
+
+    currentMemory--;
+
+    if (currentMemory < 0)
+        currentMemory = memories.length - 1;
+
+    showMemory();
+
+}
+
+
+function showFinal() {
+
+    showPage("finalPage");
+
+    createFireworks();
+
+}
+
+
+/* =====================================================
+   SHOW ANSWERS
+===================================================== */
+
+function showAnswerCard() {
+
+    const section =
+        document.getElementById("answerSection");
+
+    section.classList.remove("hidden");
+
+    const list =
+        document.getElementById("answerList");
+
+    let html = "";
+
+    answers.forEach((answer,index) => {
+
+        html += `
+
+        <div class="answer-item">
+
+            <div class="answer-question">
+
+                ${index + 1}.
+                ${escapeHTML(questions[index])}
+
+            </div>
+
+            <div class="answer-text">
+
+                ❤️ ${escapeHTML(answer)}
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+    list.innerHTML = html;
+
+    setTimeout(() => {
+
+        section.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },100);
+
+}
+
+
+/* =====================================================
+   SAVE ANSWERS AS PNG
+===================================================== */
+
+async function saveAnswersAsImage() {
+
+    const card =
+        document.getElementById("answerCard");
+
+    const button =
+        document.getElementById("saveButton");
+
+    button.innerText =
+        "⏳ Creating your picture...";
+
+    button.disabled = true;
+
+    try {
+
+        const canvas =
+            await html2canvas(card, {
+
+                scale: 3,
+
+                backgroundColor: "#fff0f6",
+
+                useCORS: true
+
+            });
+
+        const image =
+            canvas.toDataURL("image/png");
+
+        const link =
+            document.createElement("a");
+
+        link.download =
+            "Madam-Bebi-Answers-Made-by-Vanxell.png";
+
+        link.href = image;
+
+        link.click();
+
+        button.innerText =
+            "✅ Saved! ❤️";
+
+        setTimeout(() => {
+
+            button.innerText =
+                "📸 Save Answers as Image";
+
+            button.disabled = false;
+
+        },2000);
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        button.innerText =
+            "📱 Take a Screenshot";
+
+        button.disabled = false;
+
+        alert(
+            "Automatic saving isn't available right now. " +
+            "You can take a normal screenshot of the answer card. ❤️"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   FIREWORKS
+===================================================== */
+
+function createFireworks() {
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "🌹",
+        "✨",
+        "🥰"
+    ];
+
+    for(let i=0;i<45;i++) {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "firework";
+
+        item.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
+
+        item.style.left = "50%";
+        item.style.top = "50%";
+
+        document.body.appendChild(item);
+
+        const x =
+            (Math.random() - .5) *
+            window.innerWidth;
+
+        const y =
+            (Math.random() - .5) *
+            window.innerHeight;
+
+        item.animate(
+
+            [
+                {
+                    transform:
+                        "translate(-50%,-50%) scale(.5)",
+                    opacity:1
+                },
+
+                {
+                    transform:
+                        `translate(${x}px,${y}px)
+                         scale(1.5)
+                         rotate(360deg)`,
+                    opacity:0
+                }
+            ],
+
+            {
+                duration:
+                    1500 + Math.random()*1000,
+
+                easing:
+                    "cubic-bezier(.2,.8,.3,1)"
+            }
+
+        );
+
+        setTimeout(() => {
+
+            item.remove();
+
+        },2700);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+setInterval(() => {
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "🌹",
+        "✨"
+    ];
+
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "floating";
+
+    item.innerText =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+    item.style.left =
+        Math.random()*100 + "vw";
+
+    item.style.fontSize =
+        18 + Math.random()*25 + "px";
+
+    item.style.animationDuration =
+        5 + Math.random()*5 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+
+        item.remove();
+
+    },10000);
+
+},500);
+
+
+/* =====================================================
+   ROMANTIC MUSIC
+===================================================== */
+
+let audioContext;
+let musicPlaying = false;
+let musicTimer;
+
+
+function toggleMusic() {
+
+    const button =
+        document.getElementById("musicButton");
+
+    if(!audioContext) {
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    if(musicPlaying) {
+
+        clearInterval(musicTimer);
+
+        musicPlaying = false;
+
+        button.innerText = "🔇";
+
+        return;
+
+    }
+
+    musicPlaying = true;
+
+    button.innerText = "🎵";
+
+    playMelody();
+
+    musicTimer =
+        setInterval(playMelody,5000);
+
+}
+
+
+function playMelody() {
+
+    if(!audioContext || !musicPlaying)
+        return;
+
+    const notes = [
+        261.63,
+        329.63,
+        392.00,
+        329.63,
+        293.66,
+        349.23,
+        440.00,
+        392.00
+    ];
+
+    notes.forEach((frequency,index) => {
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.frequency.value =
+            frequency;
+
+        oscillator.type = "sine";
+
+        gain.gain.setValueAtTime(
+            0,
+            audioContext.currentTime +
+            index*.35
+        );
+
+        gain.gain.linearRampToValueAtTime(
+            .06,
+            audioContext.currentTime +
+            index*.35+.05
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            audioContext.currentTime +
+            index*.35+.7
+        );
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+        oscillator.start(
+            audioContext.currentTime +
+            index*.35
+        );
+
+        oscillator.stop(
+            audioContext.currentTime +
+            index*.35+.8
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   ENTER KEY
+===================================================== */
+
+document
+    .getElementById("answer")
+    .addEventListener(
+        "keypress",
+        function(event) {
+
+            if(event.key === "Enter") {
+                nextQuestion();
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
